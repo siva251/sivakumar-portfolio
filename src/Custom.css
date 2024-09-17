@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 60vw;
+}
+nav a:not(.active-link):hover {
+  border-bottom: 3px solid #00f2ff;
+  color: rgb(255, 255, 255);
+}
+.active-link {
+  display: flex;
+  text-align: center;
+  border-bottom: 3px solid #00f2ff;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  padding: 0.5%;
+  margin: 0 2vh;
+  font-size: x-large;
+  text-decoration: none;
+}
+.nonActive-link {
+  display: flex;
+  text-align: center;
+  font-weight: 400;
+  padding: 0.5%;
+  margin: 0 2vh;
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+}
+.App {
+  background-color: #000000;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5% 0 0 0;
+}
+.menu {
+  display: none;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+.menu span {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #38b2ac;
+  border-radius: 0.2rem;
+}
+.themeicon {
+  position: relative;
+  right: 8rem;
+}
+@media (max-width: 480px) {
+  .menu {
+    display: flex;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  nav:has(.open) {
+    display: flex;
+  }
+  .cardIcon {
+    width: auto !important;
+    margin: 3% 0 0 0;
+  }
+}
+
+.devimage {
+  max-width: 100%; /* Ensures image doesn't overflow */
+  height: auto;
+  align-items: center;
+}
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+.about_content {
+  overflow: hidden;
+}
+.about_border {
+  border: 1px solid #00f2ff;
+  width: 50%;
+}
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .content {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content,
+  div {
+    display: block;
+    flex-direction: column;
+  }
+
+  .content h1,
+  .content .devimage {
+    margin: 0;
+    padding: 5px;
+    max-width: 100%;
+  }
+
+  .content .devimage {
+    order: -1; /* Moves the image before the text */
+    margin-bottom: 10px;
+  }
+
+  /* Ensure the image and text are side by side */
+  @media screen and (max-width: 480px) {
+    .content {
+      display: block;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .content h1,
+    .content .devimage {
+      margin: 0 10px;
+    }
+
+    .content .devimage {
+      order: 1; /* Image comes after text in mobile view */
+      width: 40%; /* Adjust width as needed */
+      max-width: 150px; /* Ensure the image doesn't become too large */
+      height: auto;
+    }
+  }
+}
+.name_content {
+  height: 100%;
+}
+.hi_there {
+  font-size: 3rem;
+  font-family: "Gill Sans", sans-serif;
+  color: white;
+}
+.namestyle {
+  color: #00f2ff;
+}
+.nameColourChange {
+  color: #d32fd8;
+}
+.userName {
+  color: white;
+  font-size: 4rem;
+  font-family: "Gill Sans", sans-serif;
+}
+.type_msg {
+  color: white;
+  font-size: 3rem;
+  font-family: "Gill Sans", sans-serif;
+}
+.particles-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.about_whoIm {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  width: 50%;
+  padding: 2%;
+}
+.card {
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.5rem;
+}
+.cardIcon {
+  background-color: #000000;
+  border-radius: 10px;
+  width: 30%;
+  transition: box-shadow 0.2s;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  /* box-shadow: #38b2ac 0px 0px 0px 2px, #38b2ac 0px 4px 6px -1px,
+  #38b2ac 0px 1px 0px inset; */
+}
+.cardIcon:hover {
+  transform: scale(1.03);
+}
+/* commented the highlighting effect */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.cardIcon::after,
+.cardIcon::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.cardIcon::before {
+  /* filter: blur(1.5rem); */
+  opacity: 0.5;
+}
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+.icon {
+  font-size: 5rem;
+}
+.whitecolor {
+  color: white;
+}
+.alignCenter {
+  display: flex;
+  align-items: center;
+}
+.iconAlignment {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2% 0 0 0;
+}
+
+.width_100 {
+  width: 100%;
+}
+.flex_colomn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.keyskill_container {
+  margin-top: 2%;
+  position: relative;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+/* .keyskill_container .keyskill_card{
+  position: relative;
+  width: 100%;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  background: rgba(57, 55, 55, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+} */
+/* .keyskill_container .keyskill_card .keyskill_card_content{
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.keyskill_container .keyskill_card:hover .keyskill_card_content{
+  transform: translateY(0);
+  opacity: 1;
+} */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 20px;
+  border: 3px solid rgb(154, 151, 151);
+}
+.justifycontent_center {
+  display: flex;
+  justify-content: center;
+}
+.downloadButton {
+  flex-direction: column;
+  align-items: center;
+}
+.downloadButtonName {
+  background-color: #00f2ff;
+  font-weight: 400;
+  margin: 5% 0;
+  font-size: medium;
+  align-items: center;
+  display: flex;
+  font-family: "Gill Sans", sans-serif;
+  cursor: pointer;
+  width: max-content;
+  padding: 10%;
+}
+.downloadButtonName:hover,
+.downloadButtonName svg:hover {
+  background-color: #000000;
+  color: #00f2ff;
+  border-radius: 25px;
+}
+/* Dark and light mode Start */
+/* Light mode styles */
+.light-mode {
+  background-image: linear-gradient(rgb(250, 202, 248), rgb(255, 255, 255) 25%);
+  color: #000000;
+}
+.light-mode .downloadButtonName:hover,
+.light-mode .downloadButtonName svg:hover {
+  background-color: #ffffff;
+  color: #e100ff;
+  border-radius: 25px;
+}
+.light-mode .footer {
+  background-color: white;
+}
+.light-mode .nonActive-link,
+.light-mode .hi_there,
+.light-mode .Typewriter,
+.light-mode .about_whoIm,
+.light-mode .card,
+.light-mode .timeline__paragraph,
+.light-mode .keyskill_container,
+.light-mode .userName {
+  color: black;
+}
+.light-mode .namestyle,
+.light-mode .timeline__title {
+  color: #d32fd8;
+}
+.light-mode .nameColourChange {
+  color: #000000;
+}
+
+.light-mode .timeline__point,
+.light-mode .menu span,
+.light-mode .downloadButtonName {
+  background-color: #d32fd8;
+  color: white;
+}
+.light-mode .active-link,
+.light-mode nav a:not(.active-link):hover {
+  border-bottom: 3px solid #d32fd8;
+  color: #000000;
+}
+.light-mode .about_border,
+.light-mode .resume {
+  border: 1px solid #d32fd8;
+}
+.light-mode .linkedin,
+.light-mode .github {
+  color: #d32fd8;
+  font-size: xx-large;
+}
+/* Dark mode styles */
+.dark-mode .footer {
+  background-color: #121212;
+  color: #ffffff;
+}
+.dark-mode .resume {
+  border: 1px solid #00f2ff;
+}
+.dark-mode .linkedin,
+.dark-mode .github {
+  color: #00f2ff;
+  font-size: xx-large;
+}
+/* Dark and light mode End */
+.displayflex {
+  display: flex;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.footermsg {
+  font-family: "Gill Sans", sans-serif;
+  padding: 0 2%;
+}
+
+.up-downanimation {
+  animation-name: updown;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  transition: all 0.3s;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+.suncolor {
+  color: #ffc145;
+}
+.suncolor:hover {
+  color: #f28c38;
+}
