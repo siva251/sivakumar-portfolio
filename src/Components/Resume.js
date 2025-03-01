@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import pdfFile from "../Assets/Sivakumar_Softwareengineer.pdf";
+import pdfFile from "../Assets/Sivakumar.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 
 const PdfViewer = () => {

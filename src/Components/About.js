@@ -22,14 +22,14 @@ const About = () => {
           transition={{ duration: "0.5", delay: 0 }}
           className="card about_border"
         >
-          Hi Everyone, I'm <strong className="namestyle">Siva kumar</strong>{" "}
-          from <strong className="namestyle">Tamil Nadu, India</strong>
-          <br /> I am currently employed as a Software Engineer at Solartis.{" "}
+          Hi Everyone, I'm <strong className="">Siva kumar</strong>{" "}
+          from <strong className="">Tamil Nadu, India. </strong>
+           I am currently employed as a Software Engineer at Solartis.{" "}
           <br /> I have completed Bachelor of technology in Information
           Technology.
           <br />
           As an accomplished software engineer with over{" "}
-          <strong className="namestyle">
+          <strong className="">
             3 years of expertise in web development
           </strong>
           , I possess proficiency in JavaScript, React JS, HTML, CSS.
@@ -38,10 +38,10 @@ const About = () => {
           <br />
           <br />
           <p className="alignCenter">
-            <DoubleArrowOutlinedIcon className="timeline__title" /> Driving
+            <DoubleArrowOutlinedIcon className="whitecolor" /> Driving
           </p>
           <p className="alignCenter">
-            <DoubleArrowOutlinedIcon className="timeline__title" /> Gardening
+            <DoubleArrowOutlinedIcon className="whitecolor" /> Gardening
           </p>
         </motion.p>
       </div>

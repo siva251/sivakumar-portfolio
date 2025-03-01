@@ -16,7 +16,7 @@ const Experience = () => {
               class="timeline__date timeline__date--right"
             >
               <strong className="namestyle">
-                06 July, 2022 - Present, 2022 - SOLARTIS
+                06 July 2022 - Present - SOLARTIS
               </strong>
             </motion.div>
           </div>
@@ -120,7 +120,7 @@ const Experience = () => {
               class="timeline__date"
             >
               <strong className="namestyle">
-                05 July, 2021 - 05 July, 2022 - SOLARTIS
+                05 July 2021 - 05 July 2022 - SOLARTIS
               </strong>
             </motion.div>
           </div>

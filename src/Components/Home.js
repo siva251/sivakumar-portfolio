@@ -2,6 +2,7 @@ import React from "react";
 import Type from "./Type";
 import Textspan from "./Textspan";
 import { motion } from "framer-motion";
+import Avatar_img from "../Assets/Avatar_img.png"
 
 const Home = () => {
   const userName = "SIVA KUMAR B".split("");
@@ -38,13 +39,13 @@ const Home = () => {
               <Type />
             </div>
           </motion.div>
+        </div>
           {/* <div>
             <img
               className="devimage"
-              src="https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171862_l7yZ0wujj8o2SowiKTUsfLEEx8KunYNd.jpg"
+              src={Avatar_img}
             />
           </div> */}
-        </div>
       </div>
     </>
   );

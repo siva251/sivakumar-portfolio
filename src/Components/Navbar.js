@@ -7,6 +7,7 @@ import { MdSunny } from "react-icons/md";
 import { LiaMedalSolid } from "react-icons/lia";
 import { Link, NavLink } from "react-router-dom";
 import { GiMoonBats } from "react-icons/gi";
+import { BsMoonStarsFill } from "react-icons/bs";
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleTheme = () => {
@@ -49,9 +50,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             </div>
           ) : (
             <div>
-              <GiMoonBats
+              {/* <GiMoonBats
                 color="black"
                 style={{ paddingTop: "2%", fontSize: "xxx-large" }}
+              /> */}
+              <BsMoonStarsFill 
+              color="black"
+              style={{ paddingTop: "5%", fontSize: "xx-large" }}
               />
             </div>
           )}

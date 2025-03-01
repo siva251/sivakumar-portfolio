@@ -108,8 +108,12 @@ nav a:not(.active-link):hover {
   overflow: hidden;
 }
 .about_border {
-  border: 1px solid #00f2ff;
-  width: 50%;
+  background-color: #404444 ;
+  color: white ;
+  margin: 0px ;
+  border-radius: 0px ;
+  width: 100% ;
+  padding: 5rem ;
 }
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
@@ -170,7 +174,7 @@ nav a:not(.active-link):hover {
   color: #00f2ff;
 }
 .nameColourChange {
-  color: #d32fd8;
+  color: #ffffff;
 }
 .userName {
   color: white;
@@ -357,7 +361,8 @@ body::-webkit-scrollbar-thumb {
 /* Dark and light mode Start */
 /* Light mode styles */
 .light-mode {
-  background-image: linear-gradient(rgb(250, 202, 248), rgb(255, 255, 255) 25%);
+  /* background-image: linear-gradient(rgb(250, 202, 248), rgb(255, 255, 255) 25%); */
+   background-color: white;
   color: #000000;
 }
 .light-mode .downloadButtonName:hover,
@@ -381,7 +386,7 @@ body::-webkit-scrollbar-thumb {
 }
 .light-mode .namestyle,
 .light-mode .timeline__title {
-  color: #d32fd8;
+  color: #7004f4;
 }
 .light-mode .nameColourChange {
   color: #000000;
@@ -390,21 +395,28 @@ body::-webkit-scrollbar-thumb {
 .light-mode .timeline__point,
 .light-mode .menu span,
 .light-mode .downloadButtonName {
-  background-color: #d32fd8;
+  background-color: #7004f4;
   color: white;
 }
 .light-mode .active-link,
 .light-mode nav a:not(.active-link):hover {
-  border-bottom: 3px solid #d32fd8;
+  border-bottom: 3px solid #7004f4;
   color: #000000;
 }
-.light-mode .about_border,
+.light-mode .about_border{
+  background-color: #7004f4;
+  color: white;
+  margin: 0px;
+  border-radius: 0px;
+  width: 100%;
+  padding: 5rem;
+}
 .light-mode .resume {
-  border: 1px solid #d32fd8;
+  border: 1px solid #7004f4;
 }
 .light-mode .linkedin,
 .light-mode .github {
-  color: #d32fd8;
+  color: #7004f4;
   font-size: xx-large;
 }
 /* Dark mode styles */
@@ -461,4 +473,27 @@ body::-webkit-scrollbar-thumb {
 }
 .suncolor:hover {
   color: #f28c38;
+}
+.keyskill2_container{
+padding: 2rem;
+}
+.keyskill2_img{
+  width: 10%;
+  height: 10%;
+}
+.padding_2rem{
+  padding: 2rem !important;
+}
+.keyskill2_Desc{
+  background-color: white;
+  color: black;
+  margin: 1rem;
+  width: 100%;
+  border-radius: 10px;
+}
+.keyskill2_Desc_Text{
+  margin: 1rem;
+}
+.fontSize_1_2rem{
+  font-size: 1.2rem;
 }

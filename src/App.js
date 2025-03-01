@@ -11,13 +11,13 @@ import Skillset from "./Components/Skillset";
 function App() {
   const About = lazy(() => import("./Components/About"));
   const Home = lazy(() => import("./Components/Home"));
-  const KeySkills = lazy(() => import("./Components/KeySkills"));
+  const KeySkills = lazy(() => import("./Components/KeySkills2"));
   const Project = lazy(() => import("./Components/Experience"));
   const Resume = lazy(() => import("./Components/Resume"));
 
   const location = useLocation();
 
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
     <div className={isDarkMode ? "dark-mode App" : "light-mode App"}>
@@ -27,7 +27,7 @@ function App() {
         <div style={{ position: "relative", minHeight: "100vh", zIndex: 1 }}>
           <Header setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
           <Suspense fallback={<h2>Loading...</h2>}>
-            <AnimatePresence mode="wait">
+            {/* <AnimatePresence mode="wait"> */}
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
@@ -35,7 +35,7 @@ function App() {
                 <Route path="/eperience" element={<Experience />} />
                 <Route path="/resume" element={<Resume />} />
               </Routes>
-            </AnimatePresence>
+            {/* </AnimatePresence> */}
           </Suspense>
           {/* <Footer/> */}
         </div>
