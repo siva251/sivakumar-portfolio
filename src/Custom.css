@@ -497,3 +497,6 @@ padding: 2rem;
 .fontSize_1_2rem{
   font-size: 1.2rem;
 }
+.annotationLayer{
+  display: none;
+}
